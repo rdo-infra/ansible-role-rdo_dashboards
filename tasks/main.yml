@@ -1,0 +1,70 @@
+---
+# create a user
+- set_fact:
+    home: /srv/{{ dashboards_user }}
+    git_checkout: /srv/{{ dashboards_user }}/git
+
+- name: Install needed packages
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+  - ruby-devel
+  - gcc
+  - gcc-c++
+  - make
+  - rubygem-bundler
+  - nodejs
+
+- name: Create the user for rdo_dashboards
+  user:
+    name: '{{ dashboards_user }}'
+    comment: User to run RDO dashboards
+    home: '{{ home }}'
+
+
+- name: Deploy the rdo_dashboards service
+  template:
+    src: rdo_dashboards.service
+    dest: /etc/systemd/system/rdo_dashboards.service
+  notify: Reload systemd
+
+- meta: flush_handlers
+# make a git checkout
+- block:
+  - git:
+      repo: https://github.com/rdo-infra/rdo-dashboards.git 
+      dest: '{{ git_checkout }}'
+      version: HEAD
+      update: yes
+   
+  - command: bundle install
+    args:
+      chdir: '{{ git_checkout }}'
+
+  become: yes
+  become_user: '{{ dashboards_user }}'
+  become_method: 'su'
+ 
+- name: Copy config.ru template
+  template:
+    src: config.ru
+    dest: "{{ git_checkout }}/config.ru"
+  notify: Reload rdo_dashboards
+
+- name: Start the rdo_dashboards service
+  service:
+    name: rdo_dashboards
+    state: running
+    enabled: yes
+
+- cron:
+    name: Feed dashboards
+    job: '{{ dashboards_user }}/feed-dashboard.sh 127.0.0.1:3030 {{ auth_token }}'
+    user: "{{ dashboards_user }}"
+    minute: '*/15'
+
+- template:
+    src: proxy_rdo_dashboards.conf
+    dest: /etc/httpd/conf.d/{{ website_domain }}.conf.d/proxy_rdo_dashboards.conf
+  notify: verify config and restart httpd

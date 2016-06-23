@@ -1,0 +1,5 @@
+---
+dependencies:
+# more precisely
+# https://github.com/OSAS/ansible-role-httpd
+- role: httpd
