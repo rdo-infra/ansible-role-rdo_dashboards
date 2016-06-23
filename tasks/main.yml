@@ -22,6 +22,11 @@
     comment: User to run RDO dashboards
     home: '{{ home }}'
 
+- seport:
+    ports: 3030
+    proto: tcp
+    setype: http_port_t
+    state: present
 
 - name: Deploy the rdo_dashboards service
   template:
