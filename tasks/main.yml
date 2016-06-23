@@ -65,7 +65,7 @@
 
 - cron:
     name: Feed dashboards
-    job: '{{ dashboards_user }}/feed-dashboard.sh 127.0.0.1:3030 {{ auth_token }}'
+    job: '{{ git_checkout }}/feed-dashboard.sh 127.0.0.1:3030 {{ auth_token }}'
     user: "{{ dashboards_user }}"
     minute: '*/15'
 
