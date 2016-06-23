@@ -1,4 +1,18 @@
 ---
+galaxy_info:
+  author: Michael Scherer
+  description: Ansible role to deploy RDO dashboards
+  company: Red Hat
+  license: MIT
+  # Use 2.0 due to the use of block
+  min_ansible_version: 2.0
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  categories:
+  - system
+
 dependencies:
 # more precisely
 # https://github.com/OSAS/ansible-role-httpd
