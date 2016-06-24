@@ -22,7 +22,8 @@
     comment: User to run RDO dashboards
     home: '{{ home }}'
 
-- seport:
+- name: Open the port for SELinux
+  seport:
     ports: 3030
     proto: tcp
     setype: http_port_t
@@ -63,19 +64,22 @@
     state: running
     enabled: yes
 
-- cron:
+- name: Deploy the cron to update the dashboards data
+  cron:
     name: Feed dashboards
     job: '{{ git_checkout }}/feed-dashboard.sh 127.0.0.1:3030 {{ auth_token }}'
     user: "{{ dashboards_user }}"
     minute: '*/15'
 
-- cron:
+- name: Deploy the cron to update code
+  cron:
     name: Update code
     job: 'cd {{ git_checkout }} && git pull'
     user: "{{ dashboards_user }}"
     minute: '*/20'
 
-- template:
+- name: Deploy the httpd config
+  template:
     src: proxy_rdo_dashboards.conf
     dest: /etc/httpd/conf.d/{{ website_domain }}.conf.d/proxy_rdo_dashboards.conf
   notify: verify config and restart httpd
