@@ -69,6 +69,12 @@
     user: "{{ dashboards_user }}"
     minute: '*/15'
 
+- cron:
+    name: Update code
+    job: 'cd {{ git_checkout }} && git pull'
+    user: "{{ dashboards_user }}"
+    minute: '*/20'
+
 - template:
     src: proxy_rdo_dashboards.conf
     dest: /etc/httpd/conf.d/{{ website_domain }}.conf.d/proxy_rdo_dashboards.conf
