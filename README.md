@@ -18,6 +18,9 @@ Since the role use the role httpd from http://github.com/OSAS/ansible-role-httpd
 several options can be used to enable https with letsencrypt and others. See the 
 documentation of the httpd role for more information
 
+See the provided `requirements.yml` file to install role dependencies using
+Ansible galaxy.
+
 # Code and data refresh
 
 The data is updated every 15 minutes, using a cron job running as a non privileged
