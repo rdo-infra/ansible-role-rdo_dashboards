@@ -62,7 +62,7 @@
 - name: Start the rdo_dashboards service
   service:
     name: rdo_dashboards
-    state: running
+    state: started
     enabled: yes
 
 - name: Deploy the cron to update the dashboards data
