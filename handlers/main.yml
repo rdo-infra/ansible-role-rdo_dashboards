@@ -1,2 +1,10 @@
+---
+
 - name: Reload systemd
   command: systemctl daemon-reload
+
+- name: Restart rdo_dashboards
+  service:
+    name: rdo_dashboards
+    state: restarted
+

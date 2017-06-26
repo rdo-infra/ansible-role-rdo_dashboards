@@ -56,7 +56,7 @@
   template:
     src: config.ru
     dest: "{{ git_checkout }}/config.ru"
-  notify: Reload rdo_dashboards
+  notify: Restart rdo_dashboards
 
 - name: Start the rdo_dashboards service
   service:
