@@ -18,6 +18,9 @@ Since the role use the role httpd from http://github.com/OSAS/ansible-role-httpd
 several options can be used to enable https with letsencrypt and others. See the 
 documentation of the httpd role for more information
 
+This role needs the new API currently only available in the
+'duck_work_during_misc_vacation' branch.
+
 # Code and data refresh
 
 The data is updated every 15 minutes, using a cron job running as a non privileged
