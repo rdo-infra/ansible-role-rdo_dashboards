@@ -1,4 +1,11 @@
 ---
+
+# other parameters like TLS settings will be passed to this role
+- name: Create vhost for rdo_dashboards
+  include_role:
+    name: httpd
+    tasks_from: vhost
+
 # create a user
 - set_fact:
     home: /srv/{{ dashboards_user }}
