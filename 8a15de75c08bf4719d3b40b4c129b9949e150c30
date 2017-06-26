@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1b6291d8",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-06-26T17:05:58Z",
+      "side": 1,
+      "message": "This repo has an interesting branching naming convention, I\u0027d prefer boring \u0027develop\u0027 :)",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 31
+      },
+      "revId": "8a15de75c08bf4719d3b40b4c129b9949e150c30",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3b5f5510",
+        "filename": "meta/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-06-26T17:05:58Z",
+      "side": 1,
+      "message": "How is the dependency to the OSAS role expressed after this removal?",
+      "revId": "8a15de75c08bf4719d3b40b4c129b9949e150c30",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
