@@ -15,6 +15,7 @@
   - make
   - rubygem-bundler
   - nodejs
+  - git
 
 - name: Create the user for rdo_dashboards
   user:
