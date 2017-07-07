@@ -1,5 +1,5 @@
-# UUID          Group Name
-False 	Non-Interactive Users
-7078f0f87a6b0d0e09de217b29ee6930b7fc8a9f       	rdo-infra/ansible-role-rdo_dashboards-core
-202493d3ddb4925184b20153dd5f67f3c9c8218d        	rdo-infra/ansible-role-rdo_dashboards-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+202493d3ddb4925184b20153dd5f67f3c9c8218d	rdo-infra/ansible-role-rdo_dashboards-ptl
+7078f0f87a6b0d0e09de217b29ee6930b7fc8a9f	rdo-infra/ansible-role-rdo_dashboards-core
+global:Registered-Users                 	Registered Users
