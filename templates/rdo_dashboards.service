@@ -7,7 +7,7 @@ Environment=PATH={{ home }}/bin:/usr/bin:/usr/local/bin
 User={{ dashboards_user }}
 Type=simple
 WorkingDirectory={{ git_checkout }}
-ExecStart=/usr/bin/bundle exec dashing start
+ExecStart=/usr/bin/bundle exec smashing start
 
 [Install]
 WantedBy=multi-user.target
