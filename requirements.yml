@@ -1,4 +1,3 @@
 ---
-- src: https://github.com/OSAS/ansible-role-httpd
+- src: git+https://gitlab.com/osas/ansible-role-ah-httpd.git
   name: httpd
-  version: duck_work_during_misc_vacation
