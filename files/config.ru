@@ -1,7 +1,10 @@
+require 'yaml'
 require 'dashing'
 
 configure do
-  set :auth_token, '{{ auth_token }}'
+  config = YAML.load_file('/etc/rdo-dashboards.conf')
+
+  set :auth_token, config['auth_token']
 
   helpers do
     def protected!
