@@ -51,6 +51,8 @@
       dest: '{{ git_checkout }}'
       version: HEAD
       update: yes
+      # no manual changes allowed, crush them all
+      force: yes
 
   - command: bundle install
     args:
@@ -60,11 +62,13 @@
   become_user: '{{ dashboards_user }}'
   become_method: 'su'
 
-- name: Copy config.ru template
+- name: Create configuration file
   template:
-    src: config.ru
-    dest: "{{ git_checkout }}/config.ru"
-  notify: Restart rdo_dashboards
+    src: rdo-dashboards.conf
+    dest: /etc/
+    owner: root
+    group: '{{ dashboards_user }}'
+    mode: 0750
 
 - name: Start the rdo_dashboards service
   service:
@@ -75,7 +79,7 @@
 - name: Deploy the cron to update the dashboards data
   cron:
     name: Feed dashboards
-    job: '{{ git_checkout }}/feed-dashboard.sh 127.0.0.1:3030 {{ auth_token }}'
+    job: '{{ git_checkout }}/feed-dashboard.sh 127.0.0.1:3030'
     user: "{{ dashboards_user }}"
     minute: '*/15'
 
