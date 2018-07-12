@@ -47,11 +47,11 @@
 # make a git checkout
 - block:
   - git:
-      repo: https://github.com/rdo-infra/rdo-dashboards.git 
+      repo: https://github.com/rdo-infra/rdo-dashboards.git
       dest: '{{ git_checkout }}'
       version: HEAD
       update: yes
-   
+
   - command: bundle install
     args:
       chdir: '{{ git_checkout }}'
@@ -59,7 +59,7 @@
   become: yes
   become_user: '{{ dashboards_user }}'
   become_method: 'su'
- 
+
 - name: Copy config.ru template
   template:
     src: config.ru
