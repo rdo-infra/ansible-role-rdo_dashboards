@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_53b400f1",
+        "filename": "tasks/main.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-08-21T09:34:39Z",
+      "side": 0,
+      "message": "Same, let\u0027s keep the file.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 32
+      },
+      "revId": "c15ff75d39335c52d2acff9c37b280942819ed71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_73bf04d1",
+        "filename": "templates/config.ru",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-08-21T09:34:39Z",
+      "side": 0,
+      "message": "I would keep this file, even if it means storing the same token in two places. It looks like it is required by the Ruby application.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "c15ff75d39335c52d2acff9c37b280942819ed71",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
