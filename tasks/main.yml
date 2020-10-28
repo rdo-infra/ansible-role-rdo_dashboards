@@ -60,7 +60,6 @@
 
   become: yes
   become_user: '{{ dashboards_user }}'
-  become_method: 'su'
 
 - name: Create configuration file
   template:
