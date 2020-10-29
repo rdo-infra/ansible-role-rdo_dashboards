@@ -45,21 +45,19 @@
 
 - meta: flush_handlers
 # make a git checkout
-- block:
-  - git:
-      repo: https://github.com/rdo-infra/rdo-dashboards.git
-      dest: '{{ git_checkout }}'
-      version: HEAD
-      update: yes
-      # no manual changes allowed, crush them all
-      force: yes
-
-  - command: bundle install
-    args:
-      chdir: '{{ git_checkout }}'
-
+- git:
+    repo: https://github.com/rdo-infra/rdo-dashboards.git
+    dest: '{{ git_checkout }}'
+    version: HEAD
+    update: yes
+    # no manual changes allowed, crush them all
+    force: yes
   become: yes
   become_user: '{{ dashboards_user }}'
+
+- command: bundle install
+  args:
+    chdir: '{{ git_checkout }}'
 
 - name: Create configuration file
   template:
