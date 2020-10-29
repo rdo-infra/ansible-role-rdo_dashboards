@@ -54,7 +54,7 @@
       # no manual changes allowed, crush them all
       force: yes
 
-  - command: bundle install
+  - command: "bundle install --path ~/.gem"
     args:
       chdir: '{{ git_checkout }}'
 
