@@ -13,16 +13,17 @@
 
 - name: Install needed packages
   package:
-    name: '{{ item }}'
+    name:
+      - ruby-devel
+      - gcc
+      - gcc-c++
+      - make
+      - rubygem-bundler
+      - nodejs
+      - git
+      - openssl-devel
+      - redhat-rpm-config
     state: present
-  with_items:
-  - ruby-devel
-  - gcc
-  - gcc-c++
-  - make
-  - rubygem-bundler
-  - nodejs
-  - git
 
 - name: Create the user for rdo_dashboards
   user:
