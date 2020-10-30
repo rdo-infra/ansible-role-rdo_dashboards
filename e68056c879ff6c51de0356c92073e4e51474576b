@@ -1,0 +1,9 @@
+Code-Review+1: Daniel Pawlik <pawlik.dan@gmail.com>
+Code-Review+2: Javier Peña <jpena@redhat.com>
+Workflow+1: Javier Peña <jpena@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 30 Oct 2020 11:10:17 +0000
+Reviewed-on: https://review.rdoproject.org/r/30696
+Project: rdo-infra/ansible-role-rdo_dashboards
+Branch: refs/heads/master
